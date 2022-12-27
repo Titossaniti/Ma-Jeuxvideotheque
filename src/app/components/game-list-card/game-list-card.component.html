@@ -1,6 +1,15 @@
-<h1>{{item.name | titlecase }}</h1>
-<div class="img">
-    <img src="https://quaint-tan-bull.cyclic.app/images/{{item.image}}.jpg" width="100%" height="100%">
-</div>
-<h2>{{item.year}}</h2>
-<p>{{item.type}}</p>
+<a href="#">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="https://quaint-tan-bull.cyclic.app/images/{{item.image}}.jpg" alt="{{item.name}}">
+        </div>
+        <div class="flip-card-back">
+            <h1>{{item.name | titlecase}}</h1>
+            <p>{{item.year}}</p>
+            <p>{{item.studio}}</p>
+            <p class="text-end">Cliquez pour en savoir +</p>
+        </div>
+        </div>
+    </div>
+</a>

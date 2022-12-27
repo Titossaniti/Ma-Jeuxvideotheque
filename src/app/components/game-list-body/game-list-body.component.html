@@ -1,6 +1,9 @@
-<div>
-    <h1>Voici mes jeux !</h1>
-    <app-game-list-card *ngFor="let item of data,let i = index" [item]="item">
+<div class="container-fluid">
+    <h1 class="text-center">Voici mes jeux !</h1>
+    <div class="row d-flex justify-content-center">
+        <app-game-list-card *ngFor="let item of data,let i = index" [item]="item" class="col-sm-12 col-lg-5 my-3">
 
-    </app-game-list-card>
+        </app-game-list-card>
+    </div>
 </div>
+

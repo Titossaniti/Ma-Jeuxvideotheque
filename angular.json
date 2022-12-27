@@ -27,7 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/icon.png"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
