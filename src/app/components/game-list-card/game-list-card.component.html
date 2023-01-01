@@ -4,11 +4,11 @@
         <div class="flip-card-front">
             <img src="https://quaint-tan-bull.cyclic.app/images/{{item.image}}.jpg" alt="{{item.name}}">
         </div>
-        <div class="flip-card-back">
-            <h1>{{item.name | titlecase}}</h1>
-            <p>{{item.year}}</p>
-            <p>{{item.studio}}</p>
-            <p class="text-end">Cliquez pour en savoir +</p>
+        <div class="flip-card-back d-flex row">
+            <h2 class="mt-5 display-2 fw-bold">{{item.name | titlecase}}</h2>
+            <p class="fs-2">{{item.year}}</p>
+            <p>{{item.studio | uppercase}}</p>
+            <p class="savoirplus align-self-end border rounded">Cliquez pour en savoir +</p>
         </div>
         </div>
     </div>

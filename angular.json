@@ -26,10 +26,12 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
               "src/favicon.ico",
               "src/assets/icon.png"
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],

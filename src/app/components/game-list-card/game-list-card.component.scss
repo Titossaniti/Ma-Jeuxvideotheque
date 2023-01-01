@@ -52,7 +52,11 @@ a{
   
   /* Style the back side */
 .flip-card-back {
-    background-color: dodgerblue;
+    background-color: #a04b453d;
     color: white;
     transform: rotateY(180deg);
+  }
+  .savoirplus{
+    margin: auto;
+    width: auto;
   }
