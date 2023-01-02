@@ -1,7 +1,6 @@
 footer{
-    padding: 0 6vw;
+    padding: 2vw 6vw;
     border-top: solid 2px rgba(128, 128, 128, 0.445);
-    height: 80px;
     padding-bottom: 25px;
     color: #9E4D3F;
 }
@@ -14,4 +13,8 @@ a{
 }
 a :hover{
     color: white;
+}
+img{
+    width: auto;
+    height: 70px;
 }

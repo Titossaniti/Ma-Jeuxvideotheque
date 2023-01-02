@@ -5,11 +5,11 @@
     border-radius: 20px 20px;
 }
 a{
-    cursor: none;
+  cursor: none;
 }
 
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* Remove perspective if you don't want the 3D effect */
 .flip-card {
     border-radius: 20px 20px;
     height: 20vw;
@@ -31,7 +31,7 @@ a{
     border-radius: 20px 20px;
     position: relative;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 1.7s;
     transform-style: preserve-3d;
   }
   
@@ -51,12 +51,17 @@ a{
   }
   
   /* Style the back side */
-.flip-card-back {
+  .flip-card-back {
     background-color: #a04b453d;
     color: white;
     transform: rotateY(180deg);
   }
-  .savoirplus{
+
+
+
+
+
+.savoirplus{
     margin: auto;
     margin-bottom: 5px;
     width: auto;
