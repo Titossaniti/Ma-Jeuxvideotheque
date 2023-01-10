@@ -12,6 +12,7 @@ body{
     transition-timing-function: ease-out;
     animation: cursorAnim .5s infinite alternate;
     pointer-events: none;
+    z-index: 1;
 }
 
 .cursor::after {
@@ -62,5 +63,5 @@ body{
 
 .expand {
     animation: cursorAnim3 .5s forwards;
-    border: 2px solid blue;
+    border: 2px solid rgb(236, 212, 101);
 }
