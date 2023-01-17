@@ -1,3 +1,13 @@
 header{
-    height:30vw;
+    height:720px;
+}
+@media screen and (max-width:576px){
+    header{
+        height: 200px;
+    }
+}
+@media screen and (min-width:577px) and (max-width:992px){
+    header{
+        height: 300px;
+    }
 }

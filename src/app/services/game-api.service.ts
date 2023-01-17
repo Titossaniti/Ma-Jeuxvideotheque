@@ -11,4 +11,5 @@ export class GameAPIService {
   getDataFromApi() {
     return this.http.get('https://quaint-tan-bull.cyclic.app/api/movies');
   }
+
 }
