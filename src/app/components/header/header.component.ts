@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit} from '@angular/core';
 import { GameAPIService } from 'src/app/services/game-api.service';
-
 
 @Component({
   selector: 'app-header',
@@ -9,11 +7,20 @@ import { GameAPIService } from 'src/app/services/game-api.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit{
-  constructor(private http: HttpClient, private imageService: GameAPIService) { }
+  public apiImages:any[] = [];
+
+  constructor(private imageService: GameAPIService){  }
   ngOnInit(): void {
     this.imageService.getImages().subscribe(data => {
-      this.images = data; 
+      this.shuffleArray(data);
+      this.apiImages = data;
+    });
   }
+
+  shuffleArray(array:any) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
   }
-  
 }

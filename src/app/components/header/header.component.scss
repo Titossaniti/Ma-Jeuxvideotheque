@@ -1,13 +1,32 @@
 header{
-    height:720px;
+    max-height:620px;
+    margin-bottom: 2vw;
+}
+/*Remove carousel navigation arrows*/
+:host ::ng-deep {
+    .carousel-control {
+        display: none;
+     }
+}
+/**/
+img {
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center;
 }
 @media screen and (max-width:576px){
     header{
-        height: 200px;
+        height: 250px;
     }
+    img {
+        max-height: 250px;
+      }
 }
 @media screen and (min-width:577px) and (max-width:992px){
     header{
         height: 300px;
     }
+    img {
+        max-height: 300px;
+      }
 }

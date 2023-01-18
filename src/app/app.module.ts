@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GameListBodyComponent } from './components/game-list-body/game-list-body.component';
 import { GameListCardComponent } from './components/game-list-card/game-list-card.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
