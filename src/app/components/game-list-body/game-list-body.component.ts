@@ -7,12 +7,33 @@ import { GameAPIService } from 'src/app/services/game-api.service';
   styleUrls: ['./game-list-body.component.scss']
 })
 export class GameListBodyComponent implements OnInit {
-data:any;
-constructor(private gameService:GameAPIService){}
+  data: any;
+  nbOfGame: any;
+  currentPage = 1;
+  itemsPerPage = 2;
 
-ngOnInit() {
-  this.gameService.getDataFromApi().subscribe(data => {
-    this.data = data;
-  });
-}
+  constructor(private gameService: GameAPIService) {}
+
+  ngOnInit() {
+    this.gameService.getDataFromApi().subscribe(data => {
+      this.data = data;
+      this.nbOfGame = this.data.length;
+    });
+  }
+
+  // Fonction pour obtenir les éléments de la page courante
+  get items(): any[] {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    return this.data.slice(start, start + this.itemsPerPage);
+  }
+
+  // Fonction pour aller à la page suivante
+  nextPage() {
+    this.currentPage++;
+  }
+
+  // Fonction pour aller à la page précédente
+  previousPage() {
+    this.currentPage--;
+  }
 }

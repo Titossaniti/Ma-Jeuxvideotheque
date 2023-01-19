@@ -1,9 +1,22 @@
 <div class="container-fluid">
-    <h1 class="text-center">Voici les jeux qui m'ont marqués !</h1>
+    <h1 class="text-center">Découvrez {{nbOfGame}} jeux qui m'ont marqués !</h1>
+
+
     <div class="row d-flex justify-content-center">
-        <app-game-list-card *ngFor="let item of data,let i = index" [item]="item" class="col-sm-12 col-lg-5 my-3">
-
-        </app-game-list-card>
+        <app-game-list-card
+          *ngFor="let item of items"
+          [item]="item"
+          class="col-sm-12 col-lg-5 my-3"
+        ></app-game-list-card>
     </div>
-</div>
+    <div class="d-flex justify-content-around">
+        <button (click)="previousPage()" [disabled]="currentPage === 1" class="my-3 btn btn-secondary">Précédent</button>
+        <button (click)="nextPage()" [disabled]="currentPage === (nbOfGame / itemsPerPage)" class="my-3 btn btn-secondary">Suivant</button>
+    </div>
 
+      <!-- 
+        Ce code utilise les propriétés currentPage et itemsPerPage pour déterminer quelles données afficher. Les boutons "Précédent" et "Suivant" appellent les fonctions previousPage() et nextPage() pour changer la page courante, et les boutons sont désactivés si l'utilisateur est déjà sur la première ou la dernière page.
+      -->
+
+
+</div>
