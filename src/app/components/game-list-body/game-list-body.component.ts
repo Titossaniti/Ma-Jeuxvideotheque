@@ -10,7 +10,7 @@ export class GameListBodyComponent implements OnInit {
   data: any;
   nbOfGame: any;
   currentPage = 1;
-  itemsPerPage = 2;
+  itemsPerPage = 8;
 
   constructor(private gameService: GameAPIService) {}
 

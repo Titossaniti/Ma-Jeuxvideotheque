@@ -1,6 +1,29 @@
 header{
-    max-height:620px;
+    height: 620px;
     margin-bottom: 2vw;
+    border-bottom: 2px solid ;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+.hometext{
+    color: #a35e52;
+    font-weight: bold;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hometext p{
+    font-size: 20px;
+}
+carousel img{
+    width: 100%;
+    height: 618px;
+    object-fit: cover;
+    object-position: center;
+    border-left: solid 3px;
 }
 /*Remove carousel navigation arrows*/
 :host ::ng-deep {
@@ -9,11 +32,6 @@ header{
      }
 }
 /**/
-img {
-  max-height: 620px;
-  object-fit: cover;
-  object-position: center;
-}
 @media screen and (max-width:576px){
     header{
         height: 250px;
