@@ -21,6 +21,25 @@ export class GameListBodyComponent implements OnInit {
     });
   }
 
+
+  sortByYear(sortOrder: string) {
+    if (sortOrder === 'asc') {
+      this.data.sort((a:any, b:any) => a.year - b.year);
+    } else {
+      this.data.sort((a:any, b:any) => b.year - a.year);
+    }
+  }
+
+  sortByName(sortOrder: string) {
+    if (sortOrder === 'asc') {
+      this.data.sort((a:any, b:any) => (a.name > b.name) ? 1 : -1);
+    } else {
+      this.data.sort((a:any, b:any) => (a.name < b.name) ? 1 : -1);
+    }
+  }
+
+
+
   // Fonction pour obtenir les éléments de la page courante
   get items(): any[] {
     const start = (this.currentPage - 1) * this.itemsPerPage;
