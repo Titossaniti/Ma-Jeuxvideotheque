@@ -34,17 +34,17 @@ carousel img{
 /**/
 @media screen and (max-width:576px){
     header{
-        height: 250px;
+        height: 800px;
     }
     img {
-        max-height: 250px;
+        max-height: 800px;
       }
 }
 @media screen and (min-width:577px) and (max-width:992px){
     header{
-        height: 300px;
+        height: 900px;
     }
     img {
-        max-height: 300px;
+        max-height: 900px;
       }
 }
