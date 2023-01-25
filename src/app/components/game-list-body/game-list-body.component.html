@@ -9,7 +9,25 @@
       <button (click)="sortByName('asc')" class="btn btn-secondary mx-2">Ordre alphabétique : A - Z</button>
       <button (click)="sortByName('desc')" class="btn btn-secondary mx-2">Ordre alphabétique : Z - A</button>
   </div>
-  
+
+  <button (click)="showFilters = !showFilters">Filtres</button>
+  <div *ngIf="showFilters">
+    <ul>
+      <li *ngFor="let studio of uniqueStudios">
+        <input type="checkbox" (change)="updateSelectedStudios(studio, checked)" 
+        *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked> {{studio}}
+    </li>
+    
+    </ul>
+    <button (click)="selectedStudios = []">Réinitialiser les filtres</button>
+</div>
+
+
+  <!-- 
+Le bouton "Réinitialiser les filtres" défini simplement la valeur de "selectedStudios" en tableau vide, ce qui permet à l'utilisateur de réinitialiser les filtres cochés.
+  -->
+
+
   <div class="row d-flex justify-content-center">
       <app-game-list-card
         *ngFor="let item of items"
