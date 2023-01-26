@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "http-server": "^14.1.1",
     "jquery": "^3.6.2",
+    "ngx-bootstrap": "^6.2.0",
     "ngx-owl-carousel-o": "^15.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
