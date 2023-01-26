@@ -72,10 +72,10 @@ get items(): Item[] {
   let filteredData = this.data;
   if (this.selectedStudios.length > 0) {
       filteredData = filteredData.filter((item:Item) => this.selectedStudios.includes(item.studio));
-  } 
+  }
   if (this.selectedYears.length > 0) {
       filteredData = filteredData.filter((item:Item) => this.selectedYears.includes(item.year));
-  } 
+  }
   if (this.selectedSupports.length > 0){
       filteredData = filteredData.filter((item:Item) => this.selectedSupports.includes(item.support));
   }

@@ -1,7 +1,7 @@
 <div class="row">
   <h2 class="text-center">Découvrez {{nbOfGame}} jeux qui m'ont marqués !</h2>
 
-<div id="sortfilter" class="col-2">
+<div id="sortfilter" class="col-sm-12 col-lg-2">
   <div>
     <div class="trierfiltrer fw-bolder">Trier</div>
     <div class="sortbtn my-3">
@@ -54,7 +54,7 @@
 Le bouton "Réinitialiser les filtres" défini simplement la valeur de "selectedStudios" en tableau vide, ce qui permet à l'utilisateur de réinitialiser les filtres cochés.
   -->
 
-<div class="col-10">
+<div class="col-sm-12 col-lg-10">
   <div class="row d-flex justify-content-center">
     <app-game-list-card
       *ngFor="let item of items"

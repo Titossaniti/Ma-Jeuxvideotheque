@@ -1,17 +1,16 @@
-<header class="row"> 
-  <div class="hometext col-12 col-xl-5 p-4">
-    <h1 class="mb-5">Voici ma jeux-vidéothèque</h1>
-    <p>Vous y trouverez une large sélection des jeux vidéos qui ont marqué ma vie !</p>
-    <p>En cliquant sur un jeu accédez à sa fiche afin d'avoir des informations supplémentaire sur le jeu.</p>
-    <p>Vous pouvez naviguer à travers les pages ou alors filtrer et trier les jeux selon certains critères.</p>
-    <p>Si vous ne savez pas quoi chercher, laissez vous emporter par les jeux qui défilent aléatoirement !</p>
-    <p class="text-end mt-5">Bonne visite !</p>
-  </div>
-  <div class="col-12 col-xl-7">
-    <carousel [interval]="3000" [isAnimated]="true">
-      <slide *ngFor="let image of apiImages">
-        <img [src]="'https://quaint-tan-bull.cyclic.app/images/' + image.image + '.jpg'" class="d-block w-100" alt="Carousel slide that contain {{image.name}} image">
-      </slide>
-  </carousel>
-  </div>
+<header> 
+<div class="container text-center">
+  <h1>Voici ma jeux-vidéothèque</h1>
+  <p>Vous y trouverez une large sélection des jeux vidéos qui ont marqué ma vie !<p>
+  <p>En cliquant sur un jeu accédez à sa fiche afin d'avoir des informations supplémentaire sur le jeu.</p>
+  <p>Vous pouvez naviguer à travers les pages ou alors filtrer et trier les jeux selon certains critères.</p>
+  <p>Si vous ne savez pas quoi chercher, laissez vous emporter par les jeux qui défilent aléatoirement dans le carroussel !</p>
+  <p class="text-end">Bonne visite !</p>
+</div>
+
+<carousel [interval]="3000" [isAnimated]="true">
+  <slide *ngFor="let image of apiImages">
+    <img [src]="'https://quaint-tan-bull.cyclic.app/images/' + image.image + '.jpg'" class="d-block w-100" alt="Carousel slide that contain {{image.name}} image">
+  </slide>
+</carousel>
 </header>

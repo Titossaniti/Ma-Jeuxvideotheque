@@ -6,7 +6,6 @@ footer{
 }
 i{
     font-size: 1.7vw;
-    margin: 0px 10px 0px 0;
 }
 a{
     cursor: none;
@@ -17,4 +16,12 @@ a :hover{
 img{
     width: auto;
     height: 70px;
+}
+@media screen and (max-width:992px) {
+    i{
+        font-size: 30px;
+    }
+    div div{
+        margin-top: 10px;
+    }
 }
