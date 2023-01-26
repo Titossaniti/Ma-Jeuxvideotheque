@@ -10,18 +10,37 @@
       <button (click)="sortByName('desc')" class="btn btn-secondary mx-2">Ordre alphabétique : Z - A</button>
   </div>
 
-  <button (click)="showFilters = !showFilters">Filtres</button>
-  <div *ngIf="showFilters">
-    <ul>
-      <li *ngFor="let studio of uniqueStudios">
-        <input type="checkbox" (change)="updateSelectedStudios(studio, checked)" 
-        *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked> {{studio}}
-    </li>
-    
-    </ul>
-    <button (click)="selectedStudios = []">Réinitialiser les filtres</button>
-</div>
+    <button (click)="showFilters = !showFilters">Filtres</button>
+  <div *ngIf="showFilters" class="d-flex">
+    <div>
+      <ul>
+        <li *ngFor="let studio of uniqueStudios">
+          <input type="checkbox" (change)="updateSelectedStudios(studio, checked)" 
+          *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked> {{studio}}
+        </li>
+      </ul>
+    </div>
 
+    <div>
+      <ul>
+        <li *ngFor="let year of uniqueYears">
+          <input type="checkbox" (change)="updateSelectedYears(year, checked)" 
+          *ngIf="uniqueYears" [checked]="selectedYears.includes(year)" #checked> {{year}}
+        </li>
+      </ul>
+    </div>
+    
+    <div>
+      <ul>
+        <li *ngFor="let support of uniqueSupports">
+          <input type="checkbox" (change)="updateSelectedSupports(support, checked)" 
+          *ngIf="uniqueSupports" [checked]="selectedSupports.includes(support)" #checked> {{support}}
+        </li>
+      </ul>
+    </div>
+
+    <button (click)="selectedStudios = []">Réinitialiser les filtres</button>
+  </div>
 
   <!-- 
 Le bouton "Réinitialiser les filtres" défini simplement la valeur de "selectedStudios" en tableau vide, ce qui permet à l'utilisateur de réinitialiser les filtres cochés.
