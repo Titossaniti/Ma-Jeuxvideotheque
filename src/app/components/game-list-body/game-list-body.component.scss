@@ -8,8 +8,7 @@ h2{
     background-color: #9E4D3F;
     color: #111111;
     border-radius: 12px;
-    border: solid 1px #111111;
-    width: 25%;
+    border: solid 1px #9E4D3F;
     cursor: none;
     font-weight: bold;
 }
@@ -19,7 +18,26 @@ h2{
     font-weight: bold;
     border: solid 1px #9E4D3F;
 }
-
-p{
+#sortfilter, p{
     color: #9E4D3F;
+}
+#sortfilter{
+    border-right: solid 2px rgba(128, 128, 128, 0.445);
+    margin-bottom: 10px;
+    padding-left: 2%;
+}
+ul{
+    list-style-type: none;
+    text-transform: uppercase;
+}
+.sortbtn{
+    display: flex;
+    flex-direction: column;
+}
+.sortbtn button{
+    font-size: small;
+    margin-top: 5px;
+}
+.trierfiltrer{
+    border-bottom: solid 1px #9E4D3F;
 }

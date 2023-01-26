@@ -25,14 +25,12 @@ export class GameListBodyComponent implements OnInit {
   nbOfGame: any;
   currentPage = 1;
   itemsPerPage = 4;
+  showSorting = false;
   showFilters = false;
-
   uniqueStudios:any;
   selectedStudios: string[] = [];
-
   uniqueYears:any;
   selectedYears: string[] = [];
-
   uniqueSupports:any;
   selectedSupports: string[] = [];
 
@@ -111,6 +109,13 @@ updateSelectedSupports(support: string, checkedInput: HTMLInputElement) {
   }
   this.currentPage = 1;
 }
+//Réinitialiser les filtres
+resetFilters() {
+  this.selectedStudios = [];
+  this.selectedYears = [];
+  this.selectedSupports = [];
+}
+
 // Fonction pour aller à la page suivante
   nextPage() {
     this.currentPage++;
