@@ -24,20 +24,67 @@ h2{
 #sortfilter{
     border-right: solid 2px rgba(128, 128, 128, 0.445);
     margin-bottom: 10px;
-    padding-left: 2%;
+    padding-left: 1.7%;
 }
 ul{
     list-style-type: none;
     text-transform: uppercase;
+    padding-left: 2%;
+}
+li div{
+    font-size: 0.8vw;
+    font-weight: bold;
 }
 .sortbtn{
     display: flex;
     flex-direction: column;
 }
 .sortbtn button{
-    font-size: small;
     margin-top: 5px;
 }
 .trierfiltrer{
     border-bottom: solid 1px #9E4D3F;
 }
+//checkbox style//
+.toggle-pill-dark input[type="checkbox"] {
+    display: none;
+  }
+  .toggle-pill-dark input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    width: 3em;
+    height: 1.6em;
+    margin-bottom: 20px;
+    border-radius: 1em;
+    background: #303e58;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    --webkit-user-select: none;
+    --moz-user-select: none;
+    --ms-user-select: none;
+    --webkit-transition: background 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+  }
+  .toggle-pill-dark input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 1em;
+    background: #9E4D3F;
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .toggle-pill-dark input[type="checkbox"]:checked + label:before {
+    background: #47cf73;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+    left: 1.6em;
+    -webkit-transform: rotate(295deg);
+    transform: rotate(295deg);
+  }
+////////

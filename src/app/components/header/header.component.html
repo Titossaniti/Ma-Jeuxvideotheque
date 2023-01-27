@@ -1,16 +1,22 @@
-<header> 
+<header>
+  
+
+
 <div class="container text-center">
   <h1>Voici ma jeux-vidéothèque</h1>
   <p>Vous y trouverez une large sélection des jeux vidéos qui ont marqué ma vie !<p>
   <p>En cliquant sur un jeu accédez à sa fiche afin d'avoir des informations supplémentaire sur le jeu.</p>
   <p>Vous pouvez naviguer à travers les pages ou alors filtrer et trier les jeux selon certains critères.</p>
-  <p>Si vous ne savez pas quoi chercher, laissez vous emporter par les jeux qui défilent aléatoirement dans le carroussel !</p>
+  <p>Si vous ne savez pas quoi chercher, laissez vous emporter par les jeux qui défilent aléatoirement dans le carrousel !</p>
   <p class="text-end">Bonne visite !</p>
-</div>
 
-<carousel [interval]="3000" [isAnimated]="true">
+<carousel [interval]="3000" [isAnimated]="true" class="carousel">
   <slide *ngFor="let image of apiImages">
-    <img [src]="'https://quaint-tan-bull.cyclic.app/images/' + image.image + '.jpg'" class="d-block w-100" alt="Carousel slide that contain {{image.name}} image">
+    <img [src]="'https://quaint-tan-bull.cyclic.app/images/' + image.image + '.jpg'" class="d-block w-100" alt="Carrousel avec une image de {{image.name}}">
   </slide>
 </carousel>
+
+</div>
+
+
 </header>
