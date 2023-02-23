@@ -1,0 +1,23 @@
+/*forms style*/
+.formstyle{
+    padding-left: 1.5em;
+    border: none;
+    border-radius: 8px;
+  }
+div{
+    color: #9E4D3F;
+}
+input, textarea{
+    padding: 1em 0em;
+    background-color: #9E4D3F;
+    color: #111111;
+}
+
+
+::placeholder{
+    font-weight: bold;
+    color: #111111;
+  }
+:focus::placeholder{
+    color: #9E4D3F;
+  }

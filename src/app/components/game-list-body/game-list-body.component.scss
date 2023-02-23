@@ -1,21 +1,12 @@
 h2{
     font-weight: bold;
     color:#9E4D3F;
-    padding-bottom: 2vw;
+    padding: 1vw 0;
     border-bottom: solid 1px rgba(128, 128, 128, 0.445);
+    border-top: solid 1px rgba(128, 128, 128, 0.445);
 }
-.btn{
-    background-color: #9E4D3F;
-    color: #111111;
-    border-radius: 12px;
-    border: solid 1px #9E4D3F;
-    font-weight: bold;
-}
-.btn:hover{
-    background-color:#111111;
-    color: #9E4D3F;
-    font-weight: bold;
-    border: solid 1px #9E4D3F;
+.prevnext button{
+    width: 25%;
 }
 #sortfilter, p{
     color: #9E4D3F;
@@ -44,6 +35,13 @@ li div{
 .trierfiltrer{
     border-bottom: solid 1px #9E4D3F;
 }
+//Game card anim
+.vibrate-2:hover{-webkit-animation:vibrate-2 .3s linear infinite both;animation:vibrate-2 .3s linear infinite both}
+
+ @-webkit-keyframes vibrate-2{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}40%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}60%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}80%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}@keyframes vibrate-2{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}40%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}60%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}80%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}
+//
+
+
 //checkbox style//
 .toggle-pill-dark input[type="checkbox"] {
     display: none;

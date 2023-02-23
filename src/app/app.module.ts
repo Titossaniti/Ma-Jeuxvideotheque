@@ -11,6 +11,7 @@ import { GameListBodyComponent } from './components/game-list-body/game-list-bod
 import { GameListCardComponent } from './components/game-list-card/game-list-card.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     FooterComponent,
     NavbarComponent,
     GameListBodyComponent,
-    GameListCardComponent
+    GameListCardComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
