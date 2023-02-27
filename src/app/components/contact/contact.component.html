@@ -1,25 +1,27 @@
-<div class="container">
-    <div class="my-5 fs-4 contact">
-        Si vous souhaitez me contacter :
+<div class="container my-5">
+    <div class="row">
+        <div class="my-4 fs-2 fw-bold text-center">
+            Contactez-moi grâce à ce formulaire !
+        </div>
+        <form action="https://api.staticforms.xyz/submit" method="post" class="col-12">
+            <input type="hidden" name="accessKey" value="e87accda-8a80-46b8-a878-f55f8ef4ff87">
+    
+            <div class="my-4">
+                <input type="text" name="name" id="name" placeholder="Nom" class="formstyle col-12 col-lg-6">
+                <input type="text" name="$prenom" id="prenom" placeholder="Prénom" class="formstyle col-12 col-lg-5 offset-lg-1 mt-3 mt-lg-0">
+            </div>
+            
+            <input type="text" name="honeypot" style="display: none;">
+    
+            <label for="email"></label>
+            <input type="email" name="email" id="email" placeholder="Adresse mail" class="formstyle col-12" required>
+    
+            <textarea name="message" class="formstyle mt-4 pt-3 col-12" placeholder="Ecrivez-moi !" required></textarea>
+    
+            <input type="hidden" name="redirectTo" value="home of ma jeuvideotheque">
+            <div class="text-end">
+                <input id="submit" type="submit" value="Envoyer" class="mt-5 btn btn-light px-5 fw-bold"/>
+            </div>
+        </form>
     </div>
-    <form action="https://api.staticforms.xyz/submit" method="post">
-        <input type="hidden" name="accessKey" value="e87accda-8a80-46b8-a878-f55f8ef4ff87">
-
-        <div class="d-flex justify-content-between">
-            <input type="text" name="name" id="name" placeholder="Nom" class="formstyle d-block col-6">
-            <input type="text" name="$prenom" id="prenom" placeholder="Prénom" class="formstyle d-block col-5">
-        </div>
-
-        <input type="text" name="honeypot" style="display: none;">
-
-        <label for="email"></label>
-        <input type="email" name="email" id="email" placeholder="Adresse mail" class="d-block formstyle col-12" required>
-
-        <textarea name="message" class="formstyle mt-4 pt-3 col-12" placeholder="Ecrivez-moi !" required></textarea>
-
-        <input type="hidden" name="redirectTo" value="https://tristan-erard.netlify.app">
-        <div class="text-end">
-            <input id="submit" type="submit" value="Envoyer" class="mt-5 btn btn-light px-5 fw-bold"/>
-        </div>
-    </form>
 </div>

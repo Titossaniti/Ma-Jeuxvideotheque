@@ -12,12 +12,13 @@ input, textarea{
     background-color: #9E4D3F;
     color: #111111;
 }
-
-
 ::placeholder{
     font-weight: bold;
     color: #111111;
   }
 :focus::placeholder{
     color: #9E4D3F;
+  }
+  textarea{
+    height: 10em;
   }

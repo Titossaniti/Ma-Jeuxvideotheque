@@ -19,3 +19,11 @@ a{
 }
  @-webkit-keyframes pulsate-fwd{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes pulsate-fwd{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{-webkit-transform:scale(1);transform:scale(1)}}
 //
+@media screen and (max-width : 991px) {
+    a:last-child{
+        display:none
+    }
+    img{
+        width: 100%;
+    }
+}

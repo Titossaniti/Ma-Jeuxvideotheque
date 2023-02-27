@@ -8,14 +8,8 @@ import * as $ from 'jquery';
 })
 export class ContactComponent {
   ngOnInit(): void {
-    //Form focus anim
-    $('input , textarea').focusin(function(){
-      $(this).addClass('formfocus')
-    });
-    $('input , textarea').focusout(function(){
-      $(this).removeClass('formfocus')
-    });
-    //Alert on form submit successfull
+
+//Alerte pour confirmer l'envoi du formulaire
     $('form').submit(function(){
       alert('Votre message a bien été envoyé !')
     });

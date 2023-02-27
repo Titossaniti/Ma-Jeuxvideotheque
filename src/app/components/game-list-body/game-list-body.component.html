@@ -1,75 +1,78 @@
-<div class="row">
-  <h2 class="text-center">Découvrez {{nbOfGame}} jeux qui m'ont marqués !</h2>
+<div class="container-fluid">
+  <app-header></app-header>
+  <div class="row">
+    <h2 class="text-center">Découvrez {{nbOfGame}} jeux qui m'ont marqués !</h2>
 
-<div id="sortfilter" class="col-sm-12 col-lg-2">
-  <div>
-    <div class="trierfiltrer fw-bolder">Trier</div>
-    <div class="sortbtn my-3">
-      <button (click)="sortByYear('desc')" class="btn btn-secondary mx-2">+ Récent</button>
-      <button (click)="sortByYear('asc')" class="btn btn-secondary mx-2">+ Ancien</button>
+  <div id="sortfilter" class="col-12 col-lg-2">
+    <div>
+      <div class="trierfiltrer fw-bolder">Trier</div>
+      <div class="sortbtn my-3">
+        <button (click)="sortByYear('desc')" class="btn btn-secondary mx-2">+ Récent</button>
+        <button (click)="sortByYear('asc')" class="btn btn-secondary mx-2">+ Ancien</button>
 
-      <button (click)="sortByName('asc')" class="btn btn-secondary mx-2">A - Z</button>
-      <button (click)="sortByName('desc')" class="btn btn-secondary mx-2">Z - A</button>
+        <button (click)="sortByName('asc')" class="btn btn-secondary mx-2">A - Z</button>
+        <button (click)="sortByName('desc')" class="btn btn-secondary mx-2">Z - A</button>
+      </div>
+    </div>
+    <div>
+      <div class="trierfiltrer fw-bolder my-3">Filtrer</div>
+      <div class="text-start">
+        <div>
+          <p class="fw-bold">Par studio(s) :</p>
+          <ul>
+            <li *ngFor="let studio of uniqueStudios" class="toggle-pill-dark d-flex">
+                <div class="me-1"><input type="checkbox" (change)="updateSelectedStudios(studio, checked)" *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked id="pill{{studio}}" name="check">
+                    <label for="pill{{studio}}"></label></div>
+                <div>{{studio}}</div>
+            </li>
+          </ul>
+        </div>
+    
+        <div>
+          <p class="fw-bold">Par année(s) :</p>
+          <ul>
+            <li *ngFor="let year of uniqueYears"  class="toggle-pill-dark d-flex">
+              <div class="me-1"><input type="checkbox" (change)="updateSelectedYears(year, checked)" *ngIf="uniqueYears" [checked]="selectedYears.includes(year)" #checked id="pill{{year}}" name="check">
+                <label for="pill{{year}}"></label></div>
+              <div>{{year}}</div>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <p class="fw-bold">Par console(s) :</p>
+          <ul>
+            <li *ngFor="let support of uniqueSupports"  class="toggle-pill-dark d-flex">
+              <div class="me-1"><input type="checkbox" (change)="updateSelectedSupports(support, checked)" *ngIf="uniqueSupports" [checked]="selectedSupports.includes(support)" #checked id="pill{{support}}" name="check">
+                <label for="pill{{support}}"></label></div>
+              <div>{{support}}</div>
+            </li>
+          </ul>
+        </div>
+        <button class="btn col-12" (click)="resetFilters()">Réinitialiser les filtres</button>
+      </div>
     </div>
   </div>
-  <div>
-    <div class="trierfiltrer fw-bolder my-3">Filtrer</div>
-    <div class="text-start">
-      <div>
-        <p class="fw-bold ">Par studio(s) :</p>
-        <ul>
-          <li *ngFor="let studio of uniqueStudios" class="toggle-pill-dark d-flex">
-              <div class="me-1"><input type="checkbox" (change)="updateSelectedStudios(studio, checked)" *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked id="pill{{studio}}" name="check">
-                  <label for="pill{{studio}}"></label></div>
-              <div>{{studio}}</div>
-          </li>
-        </ul>
-      </div>
-  
-      <div>
-        <p class="fw-bold">Par année(s) :</p>
-        <ul>
-          <li *ngFor="let year of uniqueYears"  class="toggle-pill-dark d-flex">
-            <div class="me-1"><input type="checkbox" (change)="updateSelectedYears(year, checked)" *ngIf="uniqueYears" [checked]="selectedYears.includes(year)" #checked id="pill{{year}}" name="check">
-              <label for="pill{{year}}"></label></div>
-            <div>{{year}}</div>
-          </li>
-        </ul>
-      </div>
-      
-      <div>
-        <p class="fw-bold">Par console(s) :</p>
-        <ul>
-          <li *ngFor="let support of uniqueSupports"  class="toggle-pill-dark d-flex">
-            <div class="me-1"><input type="checkbox" (change)="updateSelectedSupports(support, checked)" *ngIf="uniqueSupports" [checked]="selectedSupports.includes(support)" #checked id="pill{{support}}" name="check">
-              <label for="pill{{support}}"></label></div>
-            <div>{{support}}</div>
-          </li>
-        </ul>
-      </div>
-      <button class="btn" (click)="resetFilters()">Réinitialiser les filtres</button>
+
+
+    <!-- 
+  Le bouton "Réinitialiser les filtres" défini simplement la valeur de "selectedStudios" en tableau vide, ce qui permet à l'utilisateur de réinitialiser les filtres cochés.
+    -->
+
+  <div class="col-12 col-lg-10">
+    <div class="row d-flex justify-content-center">
+      <app-game-list-card
+        *ngFor="let item of items"
+        [item]="item"
+        class="col-12 col-lg-4 my-3 vibrate-2"
+      ></app-game-list-card>
+    </div>
+    <div class="d-flex justify-content-around prevnext">
+      <button (click)="previousPage()" [disabled]="currentPage === 1" class="my-3 btn">Précédent</button>
+      <button (click)="nextPage()" [disabled]="currentPage === (nbOfGame / itemsPerPage)" class="my-3 btn">Suivant</button>
     </div>
   </div>
-</div>
 
-
-  <!-- 
-Le bouton "Réinitialiser les filtres" défini simplement la valeur de "selectedStudios" en tableau vide, ce qui permet à l'utilisateur de réinitialiser les filtres cochés.
-  -->
-
-<div class="col-sm-12 col-lg-10">
-  <div class="row d-flex justify-content-center">
-    <app-game-list-card
-      *ngFor="let item of items"
-      [item]="item"
-      class="col-sm-12 col-lg-4 my-3 vibrate-2"
-    ></app-game-list-card>
+  <!-- Ce code utilise les propriétés currentPage et itemsPerPage pour déterminer quelles données afficher. Les boutons "Précédent" et "Suivant" appellent les fonctions previousPage() et nextPage() pour changer la page courante, et les boutons sont désactivés si l'utilisateur est déjà sur la première ou la dernière page.-->
   </div>
-  <div class="d-flex justify-content-around prevnext">
-    <button (click)="previousPage()" [disabled]="currentPage === 1" class="my-3 btn btn-secondary">Précédent</button>
-    <button (click)="nextPage()" [disabled]="currentPage === (nbOfGame / itemsPerPage)" class="my-3 btn &²">Suivant</button>
-  </div>
-</div>
-
-<!-- Ce code utilise les propriétés currentPage et itemsPerPage pour déterminer quelles données afficher. Les boutons "Précédent" et "Suivant" appellent les fonctions previousPage() et nextPage() pour changer la page courante, et les boutons sont désactivés si l'utilisateur est déjà sur la première ou la dernière page.-->
 </div>
