@@ -19,8 +19,8 @@
       <div class="text-start">
 
         <div>
-          <p class="fw-bold" (click)="toggleAccordion1()">Par studio(s) <i class="fa-solid fa-chevron-down"></i></p>
-          <ul [ngClass]="{'d-none': !expendStudio, 'show': expendStudio}">
+          <p class="fw-bold" (click)="toggleAccordion1()">Par studios <i class="fa-solid fa-chevron-down chevron1"></i></p>
+          <ul class="accordion pt-1 scrollbarStyle" [class.expanded]="expandStudio">
             <li *ngFor="let studio of uniqueStudios" class="toggle-pill-dark d-flex">
               <div class="me-1">
                 <input type="checkbox" (change)="updateSelectedStudios(studio, checked)" *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked id="pill{{studio}}" name="check">
@@ -33,9 +33,9 @@
         
     
         <div>
-          <p class="fw-bold" (click)="toggleAccordion2()">Par année(s) <i class="fa-solid fa-chevron-down"></i></p>
-          <ul [ngClass]="{'d-none': !expendYear, 'show': expendYear}">
-            <li *ngFor="let year of uniqueYears"  class="toggle-pill-dark d-flex">
+          <p class="fw-bold" (click)="toggleAccordion2()">Par années <i class="fa-solid fa-chevron-down chevron2"></i></p>
+          <ul class="accordion pt-1 scrollbarStyle" [class.expanded]="expandYear">
+            <li *ngFor="let year of uniqueYears" class="toggle-pill-dark d-flex">
               <div class="me-1"><input type="checkbox" (change)="updateSelectedYears(year, checked)" *ngIf="uniqueYears" [checked]="selectedYears.includes(year)" #checked id="pill{{year}}" name="check">
                 <label for="pill{{year}}"></label></div>
               <div>{{year}}</div>
@@ -44,9 +44,9 @@
         </div>
         
         <div>
-          <p class="fw-bold" (click)="toggleAccordion3()">Par support(s) utilisé(s) <i class="fa-solid fa-chevron-down"></i></p>
-          <ul [ngClass]="{'d-none': !expendSupport, 'show': expendSupport}">
-            <li *ngFor="let support of uniqueSupports"  class="toggle-pill-dark d-flex">
+          <p class="fw-bold" (click)="toggleAccordion3()">Par supports utilisés <i class="fa-solid fa-chevron-down chevron3"></i></p>
+          <ul class="accordion pt-1 scrollbarStyle" [class.expanded]="expandSupport">
+            <li *ngFor="let support of uniqueSupports" class="toggle-pill-dark d-flex">
               <div class="me-1"><input type="checkbox" (change)="updateSelectedSupports(support, checked)" *ngIf="uniqueSupports" [checked]="selectedSupports.includes(support)" #checked id="pill{{support}}" name="check">
                 <label for="pill{{support}}"></label></div>
               <div>{{support}}</div>
@@ -57,7 +57,6 @@
       </div>
     </div>
   </div>
-
 
     <!-- 
   Le bouton "Réinitialiser les filtres" défini simplement la valeur de "selectedStudios" en tableau vide, ce qui permet à l'utilisateur de réinitialiser les filtres cochés.

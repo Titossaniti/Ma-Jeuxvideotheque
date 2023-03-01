@@ -12,3 +12,19 @@ header div{
 img{
     border: solid 2px #424242;
 }
+///Media queries
+@media screen and (max-width : 1400px) {
+    header{
+        font-size: 0.7em;
+    }
+}
+@media screen and (max-width : 991px) {
+header{
+    font-size: 0.9em;
+}
+}
+@media screen and (max-width : 321px) {
+    header{
+        font-size: 0.7em;
+    }
+}

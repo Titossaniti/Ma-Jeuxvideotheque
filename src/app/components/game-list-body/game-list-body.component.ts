@@ -33,10 +33,9 @@ export class GameListBodyComponent implements OnInit {
   selectedYears: string[] = [];
   uniqueSupports:any;
   selectedSupports: string[] = [];
-
-  expendStudio:boolean = false;
-  expendYear:boolean = false;
-  expendSupport:boolean = false;
+  expandStudio:boolean = false;
+  expandYear:boolean = false;
+  expandSupport:boolean = false;
 
 constructor(private gameService: GameAPIService) {}
 
@@ -95,7 +94,6 @@ updateSelectedStudios(studio: string, checkedInput: HTMLInputElement) {
   }
   this.currentPage = 1;
 }
-
 updateSelectedYears(year: string, checkedInput: HTMLInputElement) {
   if (checkedInput.checked) {
       this.selectedYears.push(year);
@@ -104,7 +102,6 @@ updateSelectedYears(year: string, checkedInput: HTMLInputElement) {
   }
   this.currentPage = 1;
 }
-
 updateSelectedSupports(support: string, checkedInput: HTMLInputElement) {
   if (checkedInput.checked) {
       this.selectedSupports.push(support);
@@ -118,8 +115,28 @@ resetFilters() {
   this.selectedStudios = [];
   this.selectedYears = [];
   this.selectedSupports = [];
+  this.expandStudio = false;
+  this.expandYear = false;
+  this.expandSupport = false;
+  let iconRotation:any =  document.querySelector('.chevron1');
+  if (this.expandStudio) {
+    iconRotation.classList.add('iconRotate');
+  } else {
+    iconRotation.classList.remove('iconRotate');
+  }
+  iconRotation =  document.querySelector('.chevron2');
+  if (this.expandYear) {
+    iconRotation.classList.add('iconRotate');
+  } else {
+    iconRotation.classList.remove('iconRotate');
+  }
+  iconRotation =  document.querySelector('.chevron3');
+  if (this.expandSupport) {
+    iconRotation.classList.add('iconRotate');
+  } else {
+    iconRotation.classList.remove('iconRotate');
+  }
 }
-
 // Fonction pour aller à la page suivante
   nextPage() {
     this.currentPage++;
@@ -128,15 +145,32 @@ resetFilters() {
   previousPage() {
     this.currentPage--;
   }
-
 //Accordéon pour les filtres
-toggleAccordion1() {
-  this.expendStudio = !this.expendStudio;
-}
-toggleAccordion2() {
-  this.expendYear = !this.expendYear;
-}
-toggleAccordion3() {
-  this.expendSupport = !this.expendSupport;
-}
+  toggleAccordion1() {
+    this.expandStudio = !this.expandStudio;
+    const iconRotation:any =  document.querySelector('.chevron1');
+    if (this.expandStudio) {
+      iconRotation.classList.add('iconRotate');
+    } else {
+      iconRotation.classList.remove('iconRotate');
+    }
+  }
+  toggleAccordion2() {
+    this.expandYear = !this.expandYear;
+    const iconRotation:any =  document.querySelector('.chevron2');
+    if (this.expandYear) {
+      iconRotation.classList.add('iconRotate');
+    } else {
+      iconRotation.classList.remove('iconRotate');
+    }
+  }
+  toggleAccordion3() {
+    this.expandSupport = !this.expandSupport;
+    const iconRotation:any =  document.querySelector('.chevron3');
+    if (this.expandSupport) {
+      iconRotation.classList.add('iconRotate');
+    } else {
+      iconRotation.classList.remove('iconRotate');
+    }
+  }
 }

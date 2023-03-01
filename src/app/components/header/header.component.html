@@ -1,7 +1,4 @@
 <header class="container-fluid">
-  
-
-
 <div class="row py-4 text-center">
   <div class="col-sm-12 col-lg-7 align-self-center">
     <h1>Ma Jeuxvidéothèque</h1>
@@ -13,7 +10,7 @@
     <p>Vous souhaitant une bonne visite !</p>
   </div>
 
-  <div class="col-sm-12 col-lg-4">
+  <div class="col-sm-12 col-lg-4 align-self-center">
     <carousel [interval]="3300" [isAnimated]="true" class="carousel">
       <slide *ngFor="let image of apiImages">
         <a routerLink="/home">
@@ -23,6 +20,4 @@
     </carousel>
   </div>
 </div>
-
-
 </header>

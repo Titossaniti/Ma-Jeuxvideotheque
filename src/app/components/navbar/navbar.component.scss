@@ -19,11 +19,24 @@ a{
 }
  @-webkit-keyframes pulsate-fwd{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes pulsate-fwd{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{-webkit-transform:scale(1);transform:scale(1)}}
 //
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 992px) {
     a:last-child{
         display:none
     }
     img{
+        height: 120px;
+        width: 100%;
+    }
+}
+@media screen and (max-width : 768px) {
+    img{
+        height: 100px;
+        width: 100%;
+    }
+}
+@media screen and (max-width : 576px) {
+    img{
+        height: auto;
         width: 100%;
     }
 }

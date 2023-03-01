@@ -40,7 +40,12 @@ li div{
 .trierfiltrer{
     border-bottom: solid 1px #9E4D3F;
 }
-//Game card anim
+p{
+    display: inline-block;
+    cursor: pointer;
+}  
+
+//Anim lors du survol d'un jeu
 .vibrate-2:hover{-webkit-animation:vibrate-2 .3s linear infinite both;animation:vibrate-2 .3s linear infinite both}
 
  @-webkit-keyframes vibrate-2{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}40%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}60%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}80%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}@keyframes vibrate-2{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}40%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}60%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}80%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}
@@ -87,9 +92,72 @@ li div{
     -webkit-transform: rotate(295deg);
     transform: rotate(295deg);
   }
-////
-@media screen and (max-width : 991px) {
-    li div{
-        font-size:1em;
+////media queries
+@media screen and (max-width : 1400px) {
+.btn, .trierfiltrer, p, li div{
+    font-size: 0.7em;
 }
+
+}
+@media screen and (max-width : 992px) {
+    li div{
+        font-size:0.8em;
+}
+.expanded {
+    height: 250px!important;
+  }
+}
+@media screen and (max-width : 322px) {
+    li div{
+        font-size:0.7em;
+}
+.expanded {
+    height: 210px!important;
+  }
+h2{
+    font-size: 0.9em;
+}
+.btn{
+    font-size: 0.8em;
+}
+}
+//Anim accordéon
+.accordion {
+    height: 0;
+    opacity: 0;
+    transition: height 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    border: solid 1px #424242 ;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  .expanded {
+    transform: scaleY(1);
+    height: 290px;
+    opacity: 1;
+  }
+//anim icon fleche
+.fa-chevron-down {
+    transition: transform 0.4s ease-in-out;
+  }
+  .iconRotate {
+    transform: rotate(-90deg);
+  }  
+//scrollbar style
+.scrollbarStyle::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px #424242;
+  border-radius: 10px;
+  background-color: #f5f5f500;
+}
+.scrollbarStyle::-webkit-scrollbar
+{
+  width: 20px;
+}
+.scrollbarStyle::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.192);
+  background-color: #9E4D3F;
 }
