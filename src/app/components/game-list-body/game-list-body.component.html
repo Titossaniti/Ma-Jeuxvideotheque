@@ -17,20 +17,24 @@
     <div>
       <div class="trierfiltrer fw-bolder my-3">Filtrer</div>
       <div class="text-start">
+
         <div>
-          <p class="fw-bold">Par studio(s) :</p>
-          <ul>
+          <p class="fw-bold" (click)="toggleAccordion1()">Par studio(s) <i class="fa-solid fa-chevron-down"></i></p>
+          <ul [ngClass]="{'d-none': !expendStudio, 'show': expendStudio}">
             <li *ngFor="let studio of uniqueStudios" class="toggle-pill-dark d-flex">
-                <div class="me-1"><input type="checkbox" (change)="updateSelectedStudios(studio, checked)" *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked id="pill{{studio}}" name="check">
-                    <label for="pill{{studio}}"></label></div>
-                <div>{{studio}}</div>
+              <div class="me-1">
+                <input type="checkbox" (change)="updateSelectedStudios(studio, checked)" *ngIf="uniqueStudios" [checked]="selectedStudios.includes(studio)" #checked id="pill{{studio}}" name="check">
+                <label for="pill{{studio}}"></label>
+              </div>
+              <div>{{studio}}</div>
             </li>
           </ul>
         </div>
+        
     
         <div>
-          <p class="fw-bold">Par année(s) :</p>
-          <ul>
+          <p class="fw-bold" (click)="toggleAccordion2()">Par année(s) <i class="fa-solid fa-chevron-down"></i></p>
+          <ul [ngClass]="{'d-none': !expendYear, 'show': expendYear}">
             <li *ngFor="let year of uniqueYears"  class="toggle-pill-dark d-flex">
               <div class="me-1"><input type="checkbox" (change)="updateSelectedYears(year, checked)" *ngIf="uniqueYears" [checked]="selectedYears.includes(year)" #checked id="pill{{year}}" name="check">
                 <label for="pill{{year}}"></label></div>
@@ -40,8 +44,8 @@
         </div>
         
         <div>
-          <p class="fw-bold">Par console(s) :</p>
-          <ul>
+          <p class="fw-bold" (click)="toggleAccordion3()">Par support(s) utilisé(s) <i class="fa-solid fa-chevron-down"></i></p>
+          <ul [ngClass]="{'d-none': !expendSupport, 'show': expendSupport}">
             <li *ngFor="let support of uniqueSupports"  class="toggle-pill-dark d-flex">
               <div class="me-1"><input type="checkbox" (change)="updateSelectedSupports(support, checked)" *ngIf="uniqueSupports" [checked]="selectedSupports.includes(support)" #checked id="pill{{support}}" name="check">
                 <label for="pill{{support}}"></label></div>

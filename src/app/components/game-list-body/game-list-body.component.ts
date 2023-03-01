@@ -34,6 +34,10 @@ export class GameListBodyComponent implements OnInit {
   uniqueSupports:any;
   selectedSupports: string[] = [];
 
+  expendStudio:boolean = false;
+  expendYear:boolean = false;
+  expendSupport:boolean = false;
+
 constructor(private gameService: GameAPIService) {}
 
   ngOnInit() {
@@ -124,4 +128,15 @@ resetFilters() {
   previousPage() {
     this.currentPage--;
   }
+
+//Accordéon pour les filtres
+toggleAccordion1() {
+  this.expendStudio = !this.expendStudio;
+}
+toggleAccordion2() {
+  this.expendYear = !this.expendYear;
+}
+toggleAccordion3() {
+  this.expendSupport = !this.expendSupport;
+}
 }
