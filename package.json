@@ -10,7 +10,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.2.0",
     "@angular/common": "^15.0.0",
     "@angular/compiler": "^15.0.0",
     "@angular/core": "^15.0.0",
@@ -21,7 +20,6 @@
     "@angular/service-worker": "^15.0.0",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@popperjs/core": "^2.11.6",
-    "angular-animations": "^0.11.0",
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
     "http-server": "^14.1.1",
