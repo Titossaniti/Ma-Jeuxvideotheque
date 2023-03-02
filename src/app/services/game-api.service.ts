@@ -29,14 +29,8 @@ export class GameAPIService {
     return this.http.get<any[]>('https://quaint-tan-bull.cyclic.app/api/movies');
   }
 
-  //filtre et tri
-  getGames() {
-    // Récupération des données de l'API
-    this.http.get<Game[]>('https://quaint-tan-bull.cyclic.app/api/movies').subscribe(data => {
-      this.games = data;
-    });
-  }
 
+  //filtre et tri
   sortByName() {
     this.games.sort((a, b) => (a.name > b.name) ? 1 : -1);
   }
