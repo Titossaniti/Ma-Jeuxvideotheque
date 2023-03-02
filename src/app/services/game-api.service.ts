@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 interface Game {
   name: string;
@@ -19,6 +20,7 @@ interface Game {
 })
 export class GameAPIService {
   private games: Game[] = [];
+  private baseUrl = window.location.origin;
 
   constructor(private http: HttpClient) {}
 
@@ -26,6 +28,10 @@ export class GameAPIService {
     return this.http.get('https://quaint-tan-bull.cyclic.app/api/movies');
   }
   getImages() {
+    return this.http.get<any[]>('https://quaint-tan-bull.cyclic.app/api/movies');
+  }
+  getDataForPage(gameName: string): Observable<any> {
+    const url = `${this.baseUrl}?image=${gameName}`;
     return this.http.get<any[]>('https://quaint-tan-bull.cyclic.app/api/movies');
   }
 

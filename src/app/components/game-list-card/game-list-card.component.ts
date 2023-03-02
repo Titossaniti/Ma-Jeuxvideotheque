@@ -14,6 +14,5 @@ export class GameListCardComponent implements OnInit{
     this.gameService.getDataFromApi().subscribe(data => {
       this.data = data;
     });
-
   }
 }
