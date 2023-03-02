@@ -12,6 +12,8 @@ import { GameListCardComponent } from './components/game-list-card/game-list-car
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ContactComponent } from './components/contact/contact.component';
+import { GamePageComponent } from './components/game-page/game-page.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ContactComponent } from './components/contact/contact.component';
     NavbarComponent,
     GameListBodyComponent,
     GameListCardComponent,
-    ContactComponent
+    ContactComponent,
+    GamePageComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
