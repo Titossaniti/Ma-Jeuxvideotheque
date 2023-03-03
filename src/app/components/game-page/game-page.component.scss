@@ -1,3 +1,26 @@
 p, div{
     color: #9E4D3F;
+    font-weight: bold;
+}
+img{
+    width: 100%;
+    height: auto;
+    border: solid #424242 2px;
+    border-radius: 20px 20px;
+  }
+#desc{
+    text-align: justify;
+}
+.mainbox{
+    border: #424242 solid 3px;
+    border-radius: 20px 20px;
+}
+.middlebox{
+    border-top: solid #424242 2px;
+    border-bottom: solid #424242 2px;
+}
+@media screen and (max-width: 576px){
+    .mainbox{
+        border: none;
+    }
 }
