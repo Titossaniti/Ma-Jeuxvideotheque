@@ -9,7 +9,6 @@
       <div class="sortbtn my-3" role="group">
         <button (click)="sortByYear('desc')" class="btn btn-secondary mx-2" aria-label="Trier du plus récent au plus ancien" role="button">+ Récent</button>
         <button (click)="sortByYear('asc')" class="btn btn-secondary mx-2" aria-label="Trier du plus ancien au plus récent" role="button">+ Ancien</button>
-
         <button (click)="sortByName('asc')" class="btn btn-secondary mx-2" aria-label="Trier par ordre alphabétique" role="button">A - Z</button>
         <button (click)="sortByName('desc')" class="btn btn-secondary mx-2" aria-label="Trier par ordre inversé de l'alphabet" role="button">Z - A</button>
       </div>
@@ -30,7 +29,6 @@
             </li>
           </ul>
         </div>
-        
     
         <div>
           <p class="fw-bold" (click)="toggleAccordion2()" aria-label="Bouton pour accéder au filtrage par année, cliquer pour sélectionner les années de sortie des jeux" role="button">Par années <i class="fa-solid fa-chevron-down chevron2"></i></p>
@@ -42,7 +40,7 @@
             </li>
           </ul>
         </div>
-        
+  
         <div>
           <p class="fw-bold" (click)="toggleAccordion3()" aria-label="Bouton pour accéder au filtrage par support, cliquer pour sélectionner les supports utilisés pour jouer" role="button">Par supports utilisés <i class="fa-solid fa-chevron-down chevron3"></i></p>
           <ul class="accordion pt-1 scrollbarStyle" [class.expanded]="expandSupport" role="group">
@@ -57,11 +55,6 @@
       </div>
     </div>
   </div>
-
-    <!-- 
-  Le bouton "Réinitialiser les filtres" défini simplement la valeur de "selectedStudios" en tableau vide, ce qui permet à l'utilisateur de réinitialiser les filtres cochés.
-    -->
-
   <div class="col-12 col-lg-10">
     <div class="row d-flex justify-content-center" aria-label="Listes des jeux" role="group">
       <app-game-list-card
@@ -70,12 +63,11 @@
         class="col-12 col-lg-4 my-3 vibrate-2"
       ></app-game-list-card>
     </div>
+
     <div class="d-flex justify-content-around prevnext">
       <button (click)="previousPage()" [disabled]="currentPage === 1" class="my-3 btn"  aria-label="Bouton pour accéder à la page précédente" role="button">Précédent</button>
       <button (click)="nextPage()" [disabled]="currentPage === (nbOfGame / itemsPerPage)" class="my-3 btn"  aria-label="Bouton pour accéder à la page suivante" role="button">Suivant</button>
     </div>
   </div>
-
-  <!-- Ce code utilise les propriétés currentPage et itemsPerPage pour déterminer quelles données afficher. Les boutons "Précédent" et "Suivant" appellent les fonctions previousPage() et nextPage() pour changer la page courante, et les boutons sont désactivés si l'utilisateur est déjà sur la première ou la dernière page.-->
   </div>
 </div>

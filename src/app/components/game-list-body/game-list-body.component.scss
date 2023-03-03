@@ -8,11 +8,6 @@ h2{
 .prevnext button{
     width: 25%;
 }
-@media screen and (max-width : 991px){
-    .prevnext button{
-        width: 40%;
-    }
-}
 #sortfilter, p{
     color: #9E4D3F;
 }
@@ -97,11 +92,13 @@ p{
 .btn, .trierfiltrer, p, li div{
     font-size: 0.7em;
 }
-
 }
 @media screen and (max-width : 992px) {
     li div{
         font-size:0.8em;
+}
+.prevnext button{
+  width: 40%;
 }
 .expanded {
     height: 250px!important;
