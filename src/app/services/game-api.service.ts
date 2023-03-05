@@ -48,23 +48,11 @@ export class GameAPIService {
   sortByYearReverse() {
     this.games.sort((a, b) => (a.year < b.year) ? 1 : -1);
   }
-  sortByAvis() {
-    this.games.sort((a, b) => (a.avis > b.avis) ? 1 : -1);
-  }
-  sortByAvisReverse() {
-    this.games.sort((a, b) => (a.avis < b.avis) ? 1 : -1);
-  }
   filterByYear(year: string) {
     return this.games.filter(game => game.year === year);
   }
   filterByStudio(studio: string) {
     return this.games.filter(game => game.studio === studio);
-  }
-  filterByAvis(avis: string) {
-    return this.games.filter(game => game.avis === avis);
-  }
-  filterByType(type: string) {
-    return this.games.filter(game => game.type === type);
   }
   filterBySupport(support: string) {
     return this.games.filter(game => game.support === support);

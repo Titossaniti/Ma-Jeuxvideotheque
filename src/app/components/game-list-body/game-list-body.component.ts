@@ -24,7 +24,7 @@ export class GameListBodyComponent implements OnInit {
   data: any;
   nbOfGame: any;
   currentPage = 1;
-  itemsPerPage = 6;
+  itemsPerPage = 9;
   showSorting = false;
   showFilters = false;
   uniqueStudios:any;
