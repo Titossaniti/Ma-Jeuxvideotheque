@@ -15,9 +15,7 @@ interface Game {
   desc: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+
 export class GameAPIService {
   private games: Game[] = [];
   private baseUrl = window.location.origin;
@@ -25,14 +23,14 @@ export class GameAPIService {
   constructor(private http: HttpClient) {}
 
   getDataFromApi() {
-    return this.http.get('https://quaint-tan-bull.cyclic.app/api/movies');
+    return this.http.get('https://titossaniti.github.io/api-jeux/data.json');
   }
   getImages() {
-    return this.http.get<any[]>('https://quaint-tan-bull.cyclic.app/api/movies');
+    return this.http.get<any[]>('https://titossaniti.github.io/api-jeux/data.json');
   }
   getDataForPage(gameName: string): Observable<any> {
     const url = `${this.baseUrl}?image=${gameName}`;
-    return this.http.get<any[]>('https://quaint-tan-bull.cyclic.app/api/movies');
+    return this.http.get<any[]>('https://titossaniti.github.io/api-jeux/data.json');
   }
 
 //filtre et tri
